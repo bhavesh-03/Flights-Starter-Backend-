@@ -1,7 +1,7 @@
 const { StatusCodes } = require("http-status-codes");
 const {AirplaneService} = require("../services");
 
-async function createAirplane(data){
+async function createAirplane(req,res){
     try{
         const airplane = await AirplaneService.createAirplane({
             modelNumber : req.body.modelNumber,
@@ -12,7 +12,7 @@ async function createAirplane(data){
             .json({
                 success:true,
                 message:"Created airplane successfully",
-                data:response,
+                data:airplane,
                 error:{}
             })
         // return airplane;
@@ -22,12 +22,12 @@ async function createAirplane(data){
             .json({
                 success:false,
                 message:"Somethings went wrong",
-                data:response,
-                error:{}
+                data:{},
+                error:err
             })
     }
 }
 
 module.exports={
-    createAirplane,
+    createAirplane
 }

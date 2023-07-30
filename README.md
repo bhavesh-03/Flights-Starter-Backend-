@@ -1,3 +1,10 @@
+// git ignored
+node_modules/
+.env
+combined.log
+src/config/config.json
+
+
 ### FEW THINGS YOU NEED TO KNOW
 - To kill a process running on a port 
 sudo lsof -i -P -n | grep LISTEN 

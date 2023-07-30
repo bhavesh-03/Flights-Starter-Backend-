@@ -4,6 +4,10 @@ const { ServerConfig } = require('./config');
 const apiRoutes = require('./routes');
 
 const app = express();
+// body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
+
 
 app.use('/api', apiRoutes);
 
