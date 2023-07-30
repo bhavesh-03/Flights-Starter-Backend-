@@ -4,7 +4,7 @@
 // }
 
 const {AirplaneRepository} = require("../repositories")
-const airplaneRepository = new AirplaneRepository ;
+const airplaneRepository = new AirplaneRepository() ;
 
 
 async function createAirplane(data){
@@ -14,4 +14,8 @@ async function createAirplane(data){
     }catch(err){
         throw err ; 
     }
+}
+
+module.exports ={
+    createAirplane
 }

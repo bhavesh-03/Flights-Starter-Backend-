@@ -14,7 +14,7 @@ async function createAirplane(req,res){
                 message:"Created airplane successfully",
                 data:airplane,
                 error:{}
-            })
+            });
         // return airplane;
     }catch(err){
         return res
